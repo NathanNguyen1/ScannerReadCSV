@@ -46,9 +46,12 @@ public class ScannerReadCSVFile
             // Pay attention to the spacing on your output
             //
             // Write your code in the space below!
-            
-            
-            
+            Scanner s = new Scanner(line).useDelimiter(",|/n");
+            while (s.hasNextInt()) {
+                int token = s.nextInt();
+                int average = (token + token) / 10;
+                System.out.println(average);
+            }
             
         }
     }
