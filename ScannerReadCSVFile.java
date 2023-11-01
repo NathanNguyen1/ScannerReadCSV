@@ -45,11 +45,14 @@ public class ScannerReadCSVFile
             // Pay attention to the spacing on your output
             //
             // Write your code in the space below!
-            Scanner s = new Scanner(line).useDelimiter(",|/n");
-            int classes = 1;
+            Scanner s = new Scanner(line).useDelimiter(",");
+            int classes = 0;
             int total = 0;
             String clas = s.next();
-            while (s.hasNextInt()) {
+            if (clas.startsWith("Class section")) {
+                    continue;
+            }
+            while (s.hasNext()) {
                 int token = s.nextInt();
                 total = token + total;
                 classes++;
